@@ -183,15 +183,15 @@ objects:
                   }
                 }
               }
-              stage('Promote to STAGE?') {
-                 steps {
-                  script {
-                    openshift.withCluster() {
-                      openshift.tag("${env.DEV_PROJECT}/tasks:latest", "${env.STAGE_PROJECT}/tasks:${version}")
-                    }
-                  }
-                }
-              }
+#              stage('Promote to STAGE?') {
+#                 steps {
+#                  script {
+#                    openshift.withCluster() {
+#                      openshift.tag("${env.DEV_PROJECT}/tasks:latest", "${env.STAGE_PROJECT}/tasks:${version}")
+#                   }
+#                  }
+#                }
+#              }
               stage('Deploy STAGE') {
                 steps {
                   script {
